@@ -1,0 +1,62 @@
+.main-container-header {
+    background-image: linear-gradient(#834D9B, #D04ED6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.game-container{
+    height: 150px;
+    background-color: #fff;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+
+}
+.emoji-logo{
+    height: 130px;}
+.matrix-logo{
+    height: 80px;
+}
+.rps-logo{
+    height: 90px;
+}
+.animalscard-logo{
+    height: 125px;
+}
+.text{
+    font-family: Bree Serif;
+font-weight: 400
+
+}
+.games-text{
+    color: #F8FAFC;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+.cards-container{
+    width: 51%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+@media screen and (max-width: 576px) {
+    .main-container-header{
+        height: 100%;
+    }
+    .cards-container{
+        width: 100%;
+        justify-content: center;
+
+    }
+    .games-text{
+        margin-bottom: 0px;
+    }
+}
