@@ -1,5 +1,6 @@
 import {Route, Routes,BrowserRouter} from 'react-router-dom'
 import GamesHeader from './Components/GamesHeader'
+import RpsRules from './Components/RPSComponents/RPSRules'
 
 import './App.css'
 
@@ -11,7 +12,9 @@ const App = () => (
   // </Routes>
   // </BrowserRouter>
   <>
-  <GamesHeader/>
+  {/* <GamesHeader/> */}
+  <RpsRules/>
+
   </>
 )
 
