@@ -1,0 +1,12 @@
+.main-nav {
+  background-color: #9796f0;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.text-emoji {
+  font-weight: bold;
+  color: #fff;
+}
