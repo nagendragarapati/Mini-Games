@@ -1,7 +1,4 @@
-import "./index.css"
-
-
-const rulesset1 = [
+export const rpsRulesSet1 = [
     {
         id: 1,
         rule: "The game result should be based on user and user opponent choices"
@@ -29,7 +26,7 @@ const rulesset1 = [
 
 ]
 
-const rulesset2 = [
+export const rpsRulesSet2 = [
     {
         id: 7,
         rule: "When the user choice is rock and his opponent choice is scissors then the result will be YOU WON"
@@ -56,30 +53,3 @@ const rulesset2 = [
     },
 
 ]
-
-const RpsRulesComp = () => {
-    return (
-
-        <div className="rules-main">
-
-
-            <div className="rules-main-container">
-
-                <ul className="rules-set-1">
-                    {
-                        rulesset1.map(rule => <li className="rule-text">{rule.rule}</li>)
-                    }
-                </ul>
-
-                <ul className="rules-set-2">
-                    {
-                        rulesset2.map(rule => <li className="rule-text">{rule.rule}</li>)
-                    }
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-
-export default RpsRulesComp

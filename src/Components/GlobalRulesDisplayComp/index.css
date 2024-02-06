@@ -5,6 +5,10 @@
     align-items: center;
 
 }
+.rule-text{
+    font-family: bree serif;
+    font-size: 16px;
+}
 
 .rules-set-1,
 .rules-set-2 {

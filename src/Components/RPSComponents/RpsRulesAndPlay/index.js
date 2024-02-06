@@ -1,8 +1,11 @@
-import RpsRulesComp from "../RpsRulesComp"
+import GlobalRulesComp from "../../GlobalRulesDisplayComp"
 import { Link } from "react-router-dom"
 import { useNavigate } from 'react-router-dom';
+import {rpsRulesSet1,rpsRulesSet2} from "../../GlobalRules"
 
 import "./index.css"
+
+
 
 const RpsRulesAndPlay = () => {
     const navigate = useNavigate();
@@ -23,7 +26,7 @@ const RpsRulesAndPlay = () => {
                 <p className="rules-text">Rules</p>
 
 
-                <RpsRulesComp />
+                <GlobalRulesComp rulesset1={rpsRulesSet1} rulesset2={rpsRulesSet2}/>
 
                 <div className="start-playing-container">
                     <Link to="/rps-play-game">
