@@ -47,6 +47,10 @@
     font-size: 13px;
     margin-bottom: 20px;
 }
+.nav-link{
+    text-decoration: none;
+    color: black;
+}
 
 .cards-container {
     width: 100%;

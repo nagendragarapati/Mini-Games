@@ -1,5 +1,5 @@
-
 import "./index.css"
+
 
 const rulesset1 = [
     {
@@ -57,47 +57,29 @@ const rulesset2 = [
 
 ]
 
-const RpsRules = () => {
-
+const RpsRulesComp = () => {
     return (
-        <div className="rps-main">
-            <div className="rps-middle">
 
-                <div className="back-container">
-                    <img src="/Images/arrow-leftarrowback.png" alt="arrow-leftarrowback" className="back-arrow" />
-                    <p>Back</p>
-                </div>
+        <div className="rules-main">
 
-                <div className="logo-container">
-                    <h1 className="logo-heading">ROCK PAPER SCISSOR</h1>
-                    <img src="/Images/Group 7469RPSlogo.png" alt="rps-logo" className="rps-logo" />
-                </div>
 
-                <div className="rules-main-container">
-                    <p>Rules</p>
+            <div className="rules-main-container">
 
-                    <ul className="rules-set-1">
-                        {
-                            rulesset1.map(rule=><li className="rule-text">{rule.rule}</li>)
-                        }
-                    </ul>
+                <ul className="rules-set-1">
+                    {
+                        rulesset1.map(rule => <li className="rule-text">{rule.rule}</li>)
+                    }
+                </ul>
 
-                    <ul className="rules-set-2">
-                        {
-                            rulesset2.map(rule=><li className="rule-text">{rule.rule}</li>)
-                        }
-                    </ul>
-                </div>
-
-                <div className="start-playing-container">
-                    <button type="button" className="start">Start playing</button>
-                </div>
-
+                <ul className="rules-set-2">
+                    {
+                        rulesset2.map(rule => <li className="rule-text">{rule.rule}</li>)
+                    }
+                </ul>
             </div>
         </div>
     )
-
 }
 
 
-export default RpsRules
+export default RpsRulesComp
