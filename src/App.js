@@ -1,7 +1,10 @@
-// import {Route, Routes,BrowserRouter} from 'react-router-dom'
-// import GamesHeader from './Components/GamesHeader'
-// import RpsRules from './Components/RPSComponents/RPSRules'
-import EmojiGame from "./Components/EmojiComponents/EmojiGame"
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
+import GamesHeader from './Components/GamesHeader'
+import RpsRulesAndPlay from './Components/RPSComponents/RpsRulesAndPlay'
+import RpsPlay from './Components/RPSComponents/RPSPlay'
+import ResultScreen from './Components/RPSComponents/Results'
+import EmojiHome from './Components/EmojiComponents/EmojiHome'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './App.css'
 
@@ -78,18 +81,21 @@ const emojisList = [
 ]
 
 const App = () => (
-  // <BrowserRouter>
-  // <Routes>
-  //   <Route exact path="/" element={<Home/>} />
-  //   <Route path="*" element={<NotFound/>} />
-  // </Routes>
-  // </BrowserRouter>
-  <>
-  {/* <GamesHeader/> */}
-  {/* <RpsRules/> */}
-  <EmojiGame emojisList={emojisList} />
+  <>  
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<GamesHeader />} />
+      <Route path="/rps-game-rules" element={<RpsRulesAndPlay />} />
+      <Route path="/rps-play-game" element={<RpsPlay />} />
+      <Route path="/rps-result" element={<ResultScreen/>}/>
+      <Route path="/emoji-game" element={<EmojiHome/>}/>
 
+      <Route path="*" element={<h1>Not Found</h1>} />
+    </Routes>
+  </BrowserRouter>
   </>
+
+
 )
 
 export default App

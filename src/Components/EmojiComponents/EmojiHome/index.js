@@ -1,3 +1,5 @@
+import EmojiGame from "../EmojiGame"
+
 
 const emojisList = [
     {
