@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useState } from "react";
-import RulesModal from "../RulesModal"
+import { useCallback, useState } from "react";
+import RulesModal from "../../GlobalRulesModal"
 import { useNavigate, } from 'react-router-dom';
 import "./index.css"
 import { useSelector,useDispatch } from "react-redux";
 import {rpsActions} from "../../../store/rpsslice"
+import {rpsRulesSet1,rpsRulesSet2} from "../../GlobalRules"
 
 
 const RpsPlay = () => {
@@ -36,7 +37,9 @@ const RpsPlay = () => {
                 <RulesModal
                     show={modalShow}
                     onHide={() => setModalShow(false)}
+                    rulesset1={rpsRulesSet1} rulesset2={rpsRulesSet2}                    
                 />
+
             </div>
 
             <div className="middle-container">

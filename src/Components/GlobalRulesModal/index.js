@@ -1,10 +1,13 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import React from "react";
-import RpsRulesComp from "../RpsRulesComp"
+import GlobalRulesComp from "../GlobalRulesDisplayComp"
 import "./index.css"
 
 function RulesModal(props) {
+
+  const { rulesset1, rulesset2 } = props
+
   return (
     <Modal
       {...props}
@@ -18,8 +21,8 @@ function RulesModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <RpsRulesComp/>
-        
+        <GlobalRulesComp rulesset1={rulesset1} rulesset2={rulesset2} />
+
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
