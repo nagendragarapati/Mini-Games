@@ -9,9 +9,11 @@ const rpsSlice=createSlice({
     reducers:{
         setUserChoice(state,action){
             state.userChoice=action.payload
-        }          
-
-    
+        },
+        
+        setScore(state,action){
+            state.score=action.payload
+        }    
     }
 })
 
