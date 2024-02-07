@@ -3,6 +3,8 @@ import GamesHeader from './Components/GamesHeader'
 import RpsRulesAndPlay from './Components/RPSComponents/RpsRulesAndPlay'
 import RpsPlay from './Components/RPSComponents/RPSPlay'
 import ResultScreen from './Components/RPSComponents/Results'
+import FlipRulesAndPlay from './Components/CardFlipComponents/FlipRulesPlay'
+import FlipPlay from './Components/CardFlipComponents/FlipPlay'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './App.css'
@@ -16,6 +18,11 @@ const App = () => (
       <Route path="/rps-game-rules" element={<RpsRulesAndPlay />} />
       <Route path="/rps-play-game" element={<RpsPlay />} />
       <Route path="/rps-result" element={<ResultScreen/>}/>
+      <Route path="/flip-game-rules" element={<FlipRulesAndPlay/>}/>
+      <Route path="/flip-play-game" element={<FlipPlay/>}/>
+
+
+
       <Route path="*" element={<h1>Not Found</h1>} />
     </Routes>
   </BrowserRouter>

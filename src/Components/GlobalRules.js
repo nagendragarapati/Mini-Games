@@ -53,3 +53,38 @@ export const rpsRulesSet2 = [
     },
 
 ]
+
+
+export const flipRulesSet1=[
+    {
+        id: 1,
+        rule: "When the game is started, the users should be able to see the list of Cards that are shuffled and turned face down."
+    },
+    {
+        id: 2,
+        rule: "When a user starts the game, the user should be able to see the Timer running."
+    },
+    {
+        id: 3,
+        rule: "The Timer starts from 2 Minutes."
+    },
+    {
+        id: 4,
+        rule: "If the two cards have the same image, they remain face up. If not, they should be flipped face down again after a short 2 seconds."
+    }
+]
+
+export const flipRulesSet2=[
+    {
+        id: 5,
+        rule: "Users should be able to compare only two cards at a time."
+    },
+    {
+        id: 6,
+        rule: "When the user is not able to find all the cards before the timer ends then the game should end and redirect to the Time Up Page."
+    },
+    {
+        id: 6,
+        rule: "If the user finds all the matching cards before the timer ends, then the user should be redirected to the results page."
+    },
+]

@@ -1,8 +1,8 @@
 
 import { useEffect } from "react"
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
+import { rpsActions } from "../../../store/rpsslice"
 import "./index.css"
 import { useState } from "react";
 
@@ -11,18 +11,64 @@ const gameValues = ["ROCK", "PAPER", "SCISSOR"]
 
 const ResultScreen = () => {
     const userChoice = useSelector(state => state.rps.userChoice)
-    const [status, setStatus] = useState('hi')
-    const [scoreValue, setScore] = useState(0)
+    const scoreValue = useSelector(state => state.rps.score)
+    const dispatch = useDispatch()
+
+    const [status, setStatus] = useState('')
     const [oppoChoice, setOppoChoice] = useState('')
     const navigate = useNavigate()
 
 
+    const getChoiceImg = (choice) => {
+        let ChoiceImg = ''
+
+        switch (choice) {
+            case "ROCK":
+                ChoiceImg = "/Images/Group 6941rock.png"
+                break;
+            case "PAPER":
+                ChoiceImg = "/Images/Paperpaper.png"
+                break;
+            case "SCISSOR":
+                ChoiceImg = "/Images/Group 6940sicor.png"
+                break;
+            default:
+                ChoiceImg = ""
+        }
+        return ChoiceImg
+    }
+
+    const getStatusEmoji = (status) => {
+        let statusImgs = []
+
+        switch (status) {
+            case "YOU WON":
+                statusImgs.push("/Images/Emojiwon-emoji.png", "/Images/Group 7618.png")
+                break;
+            case "YOU LOSE":
+                statusImgs.push("/Images/Emojiloss-sm-emoji.png", "/Images/Group 7618draw-big-emoji.png")
+                break;
+            case "IT IS DRAW":
+                statusImgs.push("/Images/Emojidrwa-sm-emoji.png", "/Images/Group 7618loss-bg-emoji.png")
+                break;
+            default:
+                statusImgs = []
+        }
+        return statusImgs
+
+    }
+
+
     useEffect(() => {
-        generateOpponentChoice()
+        if (userChoice) {
+            generateOpponentChoice()
+        }
     }, [userChoice])
 
     useEffect(() => {
-        getStatusAndScore()
+        if (oppoChoice) {
+            getStatusAndScore()
+        }
 
     }, [oppoChoice])
 
@@ -33,9 +79,7 @@ const ResultScreen = () => {
 
 
     const getStatusAndScore = () => {
-
         let gameStatus = ""
-
         if (userChoice === oppoChoice) {
             gameStatus = "IT IS DRAW"
         }
@@ -45,18 +89,16 @@ const ResultScreen = () => {
             (userChoice === gameValues[0] && oppoChoice === gameValues[2])) {
 
             gameStatus = "YOU WON"
-            setScore(pre => pre + 1)
+            dispatch(rpsActions.setScore(scoreValue + 1))
+
         }
         else {
             gameStatus = "YOU LOSE"
-            setScore(pre => pre - 1)
+            dispatch(rpsActions.setScore(scoreValue - 1))
         }
 
         setStatus(gameStatus)
     }
-
-    console.log(userChoice, oppoChoice, status, scoreValue)
-
 
     return (
 
@@ -72,7 +114,7 @@ const ResultScreen = () => {
                     </ul>
 
                     <div className="score-container">
-                        <img src="/Images/Group 7618.png" alt="result-img" className="result-img" />
+                        <img src={getStatusEmoji(status)[1]} alt="result-img" className="result-img" />
                         <div className="score">
                             <p className="score-text">Score</p>
                             <p className="score-num">{scoreValue}</p>
@@ -86,18 +128,18 @@ const ResultScreen = () => {
                 <div className="result-container">
                     <div className="result">
                         <p className="text">You</p>
-                        <img src="/Images/Group 6941rock.png" className="img-result" alt="rock-img" />
+                        <img src={getChoiceImg(userChoice)} className="img-result" alt="rock-img" />
                     </div>
 
                     <div className="emoji-container">
-                        <img src="/Images/Emojiwon-emoji.png" className="img-emoji" alt="emoji-img" />
+                        <img src={getStatusEmoji(status)[0]} className="img-emoji" alt="emoji-img" />
                         <p className="result-text">{status}</p>
                         <button type="button" className="play-again-btn" onClick={() => navigate("/rps-play-game")}>Play Again</button>
                     </div>
 
                     <div className="result">
                         <p className="text">Opponent</p>
-                        <img src="/Images/Group 6940sicor.png" className="img-result" alt="sicc-img" />
+                        <img src={getChoiceImg(oppoChoice)} className="img-result" alt="sicc-img" />
                     </div>
                 </div>
             </div>
