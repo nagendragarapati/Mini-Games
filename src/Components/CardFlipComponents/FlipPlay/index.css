@@ -31,9 +31,7 @@
     display: flex;
     justify-content: space-between;
 }
-.game-result-values{
 
-}
 .flip-cards-container{
     width: 45vw;
     list-style: none;
@@ -58,5 +56,30 @@
     border-radius: 10px;
 }
 .flip-image{
-    height: 60px;
+    height: 80px;
+    cursor: pointer;
+    background: rgba(167, 243, 208, 0.5);
+    width: 80px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .flip-title-container{
+        width: 80vw;
+    }
+    .flip-cards-container{
+        width: 75vw;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    .flip-cards-container{
+        display: flex;
+        justify-content: space-around;
+    }
 }
