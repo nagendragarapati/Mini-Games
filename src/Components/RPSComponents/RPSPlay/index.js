@@ -1,10 +1,11 @@
 import { useCallback, useState } from "react";
 import RulesModal from "../../GlobalRulesModal"
 import { useNavigate, } from 'react-router-dom';
-import "./index.css"
 import { useSelector,useDispatch } from "react-redux";
 import {rpsActions} from "../../../store/rpsslice"
 import {rpsRulesSet1,rpsRulesSet2} from "../../GlobalRules"
+import "./index.css"
+
 
 
 const RpsPlay = () => {
@@ -17,7 +18,6 @@ const RpsPlay = () => {
 
     const getUserChoice = useCallback(userChoiceValue => {
         dispatch(rpsActions.setUserChoice(userChoiceValue))
-        // generateOpponentChoice()
         navigate("/rps-result")
     }, [userChoice])
 

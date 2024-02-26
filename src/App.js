@@ -7,6 +7,7 @@ import EmojiHome from './Components/EmojiComponents/EmojiHome'
 import FlipRulesAndPlay from './Components/CardFlipComponents/FlipRulesPlay'
 import FlipPlay from './Components/CardFlipComponents/FlipPlay'
 import EmojiRules from './Components/EmojiComponents/EmojiRules'
+import FlipResults from './Components/CardFlipComponents/FlipResults'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './App.css'
@@ -26,6 +27,7 @@ const App = () => (
 
 
 
+      <Route path="/flip-result" element={<FlipResults/>}/>
 
       <Route path="*" element={<h1>Not Found</h1>} />
     </Routes>
