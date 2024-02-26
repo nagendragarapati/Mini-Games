@@ -7,12 +7,14 @@ const GlobalRulesComp = (props) => {
 
     const {rulesset1,rulesset2}=props
 
+    const rulesMainContainerStyle=rulesset2 ? "rules-main-container" :""
+
     return (
 
         <div className="rules-main">
 
 
-            <div className="rules-main-container">
+            <div className={rulesMainContainerStyle}>
 
                 <ul className="rules-set-1">
                     {

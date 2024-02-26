@@ -18,7 +18,7 @@ const FlipRulesAndPlay = () => {
                 <div className="back-btn-container" onClick={() => navigate(-1)}>
                     <img src="/Images/arrow-leftarrowback.png" alt="arrow-leftarrowback" className="back-arrow" />
                     <p className="back-text">Back</p>               
-                    </div>
+                </div>
 
                 <div className="logo-container">
                     <img src="/Images/animalscard-flop-logo.png" alt="flip-logo" className="flip-logo" />

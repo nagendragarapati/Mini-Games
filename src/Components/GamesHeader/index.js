@@ -9,7 +9,7 @@ const GamesHeader = () => {
                 <h1 >Games</h1>
             </div>
             <div className="cards-container">
-            <Link to="/emoji-game" className="nav-link">
+            <Link to="/emoji-game-rules" className="nav-link">
 
                 <div className="game-container">
                     <img src="/Images/Group 7471emoji.png" className="emoji-logo" alt="emoji-logo" />

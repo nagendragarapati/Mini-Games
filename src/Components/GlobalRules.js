@@ -88,3 +88,32 @@ export const flipRulesSet2=[
         rule: "If the user finds all the matching cards before the timer ends, then the user should be redirected to the results page."
     },
 ]
+
+export const emojiRulesSet = [
+    {
+        id: 1,
+        rule: "User should be able to see the list of Emojis"
+    },
+    {
+        id: 2,
+        rule: "When the user clicks any one of the Emoji for the first time, then the count of the score should be incremented by 1 and the List of emoji cards should be shuffled."
+    },
+    {
+        id: 3,
+        rule: "This process should be repeated every time the user clicks on an emoji card"
+    },
+    {
+        id: 4,
+        rule: "When the user clicks on all Emoji cards without clicking any of it twice, then the user will win the game"
+    },
+    {
+        id: 5,
+        rule: "When the user clicks on the same Emoji for the second time, then the user will lose the game."
+    },
+    {
+        id: 6,
+        rule: "Once the game is over, the user will be redirected to the results page."
+    },
+
+]
+

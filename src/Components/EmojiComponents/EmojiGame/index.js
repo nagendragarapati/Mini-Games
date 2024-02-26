@@ -1,13 +1,23 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import NavBar from '../NavBar'
 import EmojiCard from '../EmojiCard'
+import RulesModal from "../../GlobalRulesModal"
+import { useNavigate, } from 'react-router-dom';
+import { emojiRulesSet } from "../../GlobalRules"
+import EmojiWinRLose from '../WinOrLoseCard';
+
+
 import './index.css'
 
 const EmojiGame = props => {
-  const {emojisList} = props
+  const { emojisList } = props
   const [clickedEmojiList, setClicked] = useState([])
   const [falseClick, setFalseClick] = useState(false)
   const [TopScore, setTopScore] = useState(0)
+  const [modalShow, setModalShow] = useState(false);
+
+
+  const navigate = useNavigate();
 
   const shuffledEmojisList = () => emojisList.sort(() => Math.random() - 0.5)
 
@@ -44,24 +54,50 @@ const EmojiGame = props => {
         TopScore={TopScore}
         falseClicked={falseClick}
       />
+      <div className="emoji-main-container">
+        {falseClick || clickedEmojiList.length === 12 ? (
+          <EmojiWinRLose score={clickedEmojiList.length} onPlayAgain={onPlayAgain} />
+        ) : (
+          <>
+            <div className='emoji-rules-back-container'>
 
-      {falseClick ? (
-        <div>
-          <h1>You Loss</h1>
-          <p>Score is {clickedEmojiList.length}</p>
-          <button onClick={onPlayAgain}>Play Again</button>
-        </div>
-      ) : (
-        <div className="emoji_button">
-          {emojisList.map(emoji => (
-            <EmojiCard
-              emoji={emoji}
-              key={emoji.id}
-              onEmojiClick={onEmojiClick}
-            />
-          ))}
-        </div>
-      )}
+              <div className="back-rule-header-emoji">
+                <div className="back-container" onClick={() => navigate(-1)}>
+                  <img src="/Images/black-back-arrow.png" alt="arrow-leftarrowback" className="black-back-arrow" />
+                  <p className="back-text">Back</p>
+                </div>
+
+                <button type="button" className="rules-btn-emoji" onClick={() => setModalShow(true)}>Rules</button>
+
+                <RulesModal
+                  show={modalShow}
+                  onHide={() => setModalShow(false)}
+                  rulesset1={emojiRulesSet}
+                />
+
+              </div>
+
+            </div>
+
+            <div className='emoji-icons-container'>
+
+              <div className='emoji_button'>
+
+
+                {emojisList.map(emoji => (
+                  <EmojiCard
+                    emoji={emoji}
+                    key={emoji.id}
+                    onEmojiClick={onEmojiClick}
+                  />
+                ))}
+
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+
     </div>
   )
 }

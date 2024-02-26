@@ -8,7 +8,7 @@ const EmojiCard = props => {
   }
 
   return (
-    <div>
+    <div className='emoji-icon-sec'>
       <img src={emoji.emojiUrl} className="emoji_img" onClick={onChangeEmoji} />
     </div>
   )
