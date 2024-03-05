@@ -8,6 +8,9 @@ import FlipRulesAndPlay from './Components/CardFlipComponents/FlipRulesPlay'
 import FlipPlay from './Components/CardFlipComponents/FlipPlay'
 import EmojiRules from './Components/EmojiComponents/EmojiRules'
 import FlipResults from './Components/CardFlipComponents/FlipResults'
+import MemoryGame from './Components/MemoryMatrixComponents/MemoryGame'
+import MemoryMatrixRules from './Components/MemoryMatrixComponents/MemoryMatrixRules'
+import MemoryMatrixResults from './Components/MemoryMatrixComponents/MemoryMatrixResults'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './App.css'
@@ -21,13 +24,13 @@ const App = () => (
       <Route path="/rps-play-game" element={<RpsPlay />} />
       <Route path="/rps-result" element={<ResultScreen/>}/>
       <Route path="/flip-game-rules" element={<FlipRulesAndPlay/>}/>
+      <Route path="/flip-result" element={<FlipResults/>}/>
       <Route path="/flip-play-game" element={<FlipPlay/>}/>
       <Route path="/emoji-game" element={<EmojiHome/>}/>
       <Route path="/emoji-game-rules" element={<EmojiRules />} />
-
-
-
-      <Route path="/flip-result" element={<FlipResults/>}/>
+      <Route path="/memory-game-rules" element={<MemoryMatrixRules />} />
+      <Route path="/memory-game" element={<MemoryGame/>}/>
+      <Route path="/memory-game-results" element={<MemoryMatrixResults/>}/>
 
       <Route path="*" element={<h1>Not Found</h1>} />
     </Routes>

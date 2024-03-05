@@ -1,17 +1,17 @@
 import GlobalRulesComp from "../../GlobalRulesDisplayComp"
 import { Link } from "react-router-dom"
 import { useNavigate } from 'react-router-dom';
-import { rpsRulesSet1, rpsRulesSet2 } from "../../GlobalRules"
+import { memoryRuleSet1, memoryRuleSet2 } from "../../GlobalRules"
 
 import "./index.css"
 
 
 
-const RpsRulesAndPlay = () => {
+const MemoryMatrixRules = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="rps-main">
+        <div className="rps-main memory-matrix-main">
             <div className="rps-middle">
 
                 <div className="back-btn-container" onClick={() => navigate('/')}>
@@ -20,17 +20,16 @@ const RpsRulesAndPlay = () => {
                 </div>
 
                 <div className="logo-container">
-                    <h1 className="logo-heading">ROCK PAPER SCISSOR</h1>
-                    <img src="/Images/Group 7469RPSlogo.png" alt="rps-logo" className="rps-logo" />
+                    <img src="/Images/memory.png" alt="rps-logo" className="memory-matrix-logo" />
                 </div>
                 <p className="rules-text">Rules</p>
 
 
-                <GlobalRulesComp rulesset1={rpsRulesSet1} rulesset2={rpsRulesSet2} />
+                <GlobalRulesComp rulesset1={memoryRuleSet1} rulesset2={memoryRuleSet2} />
 
                 <div className="start-playing-container">
-                    <Link to="/rps-play-game">
-                        <button type="button" className="start">Start playing</button>
+                    <Link to="/memory-game">
+                        <button type="button" className="start start-memory-game">Start playing</button>
                     </Link>
                 </div>
 
@@ -41,4 +40,4 @@ const RpsRulesAndPlay = () => {
 }
 
 
-export default RpsRulesAndPlay
+export default MemoryMatrixRules

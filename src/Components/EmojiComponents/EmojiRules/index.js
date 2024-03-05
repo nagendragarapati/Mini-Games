@@ -15,7 +15,7 @@ const EmojiRules = () => {
     return (
 
         <div className='emoji-rules-main'>
-            <div className="back-btn-container" onClick={() => navigate(-1)}>
+            <div className="back-btn-container" onClick={() => navigate('/')}>
                 <img src="/Images/black-back-arrow.png" alt="arrow-leftarrowback" className="black-back-arrow" />
                 <p className="back-text">Back</p>
             </div>

@@ -62,7 +62,7 @@ const EmojiGame = props => {
             <div className='emoji-rules-back-container'>
 
               <div className="back-rule-header-emoji">
-                <div className="back-container" onClick={() => navigate(-1)}>
+                <div className="back-container" onClick={() => navigate('/emoji-game-rules')}>
                   <img src="/Images/black-back-arrow.png" alt="arrow-leftarrowback" className="black-back-arrow" />
                   <p className="back-text">Back</p>
                 </div>

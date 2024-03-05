@@ -27,7 +27,7 @@ const RpsPlay = () => {
         <div className="play-main">
 
             <div className="back-rule-header">
-                <div className="back-container" onClick={() => navigate(-1)}>
+                <div className="back-container" onClick={() => navigate('/rps-game-rules')}>
                     <img src="/Images/arrow-leftarrowback.png" alt="arrow-leftarrowback" className="back-arrow" />
                     <p className="back-text">Back</p>
                 </div>

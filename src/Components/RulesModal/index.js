@@ -19,12 +19,8 @@ function RulesModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <GlobalRulesComp  rulesset1={rulesset1} rulesset2={rulesset2}/>
-        
+        <GlobalRulesComp  rulesset1={rulesset1} rulesset2={rulesset2}/>        
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
     </Modal>
   );
 }

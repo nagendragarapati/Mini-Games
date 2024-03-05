@@ -117,3 +117,37 @@ export const emojiRulesSet = [
 
 ]
 
+
+export const memoryRuleSet1=[
+    {
+        id: 1,
+        rule: "In each level of the Game, users should be able to see the Grid with (NxN) size starting from 3 and the grid will highlight N cells in Blue, the N highlighted cells will be picked randomly."
+    },
+    {
+        id: 2,
+        rule: "The highlighted cells will remian N seconds for the user to memorize the cells. At this point, the user should not be able to perform any action."
+    },
+    {
+        id: 3,
+        rule: "After N seconds, the grid will clear the N highlighted cells"
+    }
+]
+
+export const memoryRuleSet2=[
+    {
+        id: 4,
+        rule: "At N seconds, the user can click on any cell. Clicking on a cell that was highlighted before it will turn blue. Clicking on the other cells that were not highlighted before then will turn to red."
+    },
+    {
+        id: 5,
+        rule: "The user should be promoted to the next level if they guess all N cells correctly in one attempt."
+    },
+    {
+        id: 6,
+        rule: "The user should be taken to the results page if the user clicks on the wrong cell."
+    },
+    {
+        id: 7,
+        rule: "If the user completed all the levels, then the user should be taken to the results page."
+    }
+]

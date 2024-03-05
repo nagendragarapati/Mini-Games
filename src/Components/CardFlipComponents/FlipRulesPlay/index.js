@@ -15,7 +15,7 @@ const FlipRulesAndPlay = () => {
         <div className="flip-main ">
             <div className="rps-middle">
 
-                <div className="back-btn-container" onClick={() => navigate(-1)}>
+                <div className="back-btn-container" onClick={() => navigate('/')}>
                     <img src="/Images/arrow-leftarrowback.png" alt="arrow-leftarrowback" className="back-arrow" />
                     <p className="back-text">Back</p>               
                 </div>

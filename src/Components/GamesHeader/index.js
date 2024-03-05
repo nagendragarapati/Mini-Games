@@ -16,7 +16,7 @@ const GamesHeader = () => {
                 </div>
                 </Link>
 
-                <Link to="/matrix-game-rules" className="nav-link">
+                <Link to="/memory-game-rules" className="nav-link">
 
                 <div className="game-container">
                     <p className="text">Memory Matrix</p>

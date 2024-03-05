@@ -235,7 +235,7 @@ const FlipPlay = () => {
             <div className="flip-middle-container">
 
                 <div className="back-rule-header back-rule-header-flip">
-                    <div className="back-container" onClick={() => navigate(-1)}>
+                    <div className="back-container" onClick={() => navigate('/flip-game-rules')}>
                         <img src="/Images/arrow-leftarrowback.png" alt="arrow-leftarrowback" className="back-arrow" />
                         <p className="back-text">Back</p>
                     </div>

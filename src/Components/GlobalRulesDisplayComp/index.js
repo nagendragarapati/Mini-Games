@@ -18,7 +18,7 @@ const GlobalRulesComp = (props) => {
 
                 <ul className="rules-set-1">
                     {
-                        rulesset1.map(ruleObj => <li className="rule-text">{ruleObj.rule}</li>)
+                        rulesset1?.map(ruleObj => <li className="rule-text">{ruleObj.rule}</li>)
                     }
                 </ul>
 
